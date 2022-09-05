@@ -15,6 +15,6 @@ if ((peso < 0) || (peso > 1000)){
     console.log("Peso incorrecto");
 }
 
-if ((altura < 0) || (altura > 1000)){
+if ((altura < 0) || (altura > 4.00)){
     console.log("Altura incorrecto");
 }
