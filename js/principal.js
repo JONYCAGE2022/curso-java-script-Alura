@@ -1,7 +1,7 @@
 var titulo = document.querySelector(".titulo");
 
 titulo.addEventListener("click",mostrarMensaje);//escuchador de eventos
-
+//al llamar a la funcion mostrarMensaje se puede adicionar los parentesis y si o si se tendra que pasar los parametros para que el evento click traiga o retorne un datos
 function mostrarMensaje (){
     console.log("usted hizo click en el titulo");
 }
