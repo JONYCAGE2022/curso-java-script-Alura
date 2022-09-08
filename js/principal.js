@@ -1,3 +1,11 @@
+var titulo = document.querySelector(".titulo");
+
+titulo.addEventListener("click",mostrarMensaje);//escuchador de eventos
+
+function mostrarMensaje (){
+    console.log("usted hizo click en el titulo");
+}
+
 //paciente es un objeto 
 var pacientes = document.querySelectorAll(".paciente");
 console.log(pacientes);
