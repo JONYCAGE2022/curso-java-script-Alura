@@ -28,7 +28,7 @@ for (var i = 0; i<pacientes.length; i++){
         console.log("Altura incorrecto");
         tdIMC.textContent = "Altura incorrecto ";  //imprime en la tabla el msj
         alturaEsValida = false;
-        paciente.classList.add("paciente-incorrecto");
+        paciente.classList.add("paciente-incorrecto");//paciente.style.background_color = "blue"; por si se quiere cambiar de color directamente desde javascript 
     }
     //verdadero Y verdadero --> verdadero
     // verdadero y falso --> falso
