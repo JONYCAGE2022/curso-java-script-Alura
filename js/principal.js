@@ -1,4 +1,4 @@
-
+//paciente es un objeto 
 var pacientes = document.querySelectorAll(".paciente");
 console.log(pacientes);
 
@@ -21,17 +21,19 @@ for (var i = 0; i<pacientes.length; i++){
         console.log("Peso incorrecto");
         tdIMC.textContent = "Peso incorrecto";   //imprime en la tabla el msj  
         pesoEsValido = false;
+        paciente.classList.add("paciente-incorrecto");//adicioname la clase paciente-incorrecto al objeto paciente
     }
     //verdadero o falso --> verdadero
     if ((altura < 0) || (altura > 3.00)){
         console.log("Altura incorrecto");
         tdIMC.textContent = "Altura incorrecto ";  //imprime en la tabla el msj
         alturaEsValida = false;
+        paciente.classList.add("paciente-incorrecto");
     }
     //verdadero Y verdadero --> verdadero
     // verdadero y falso --> falso
     if (pesoEsValido && alturaEsValida){
-        var imc = peso / (altura * altura) //100 / 2 * 2 = 100 / 4 = 25 
+        var imc = peso / (altura * altura); //100 / 2 * 2 = 100 / 4 = 25 
         tdIMC.textContent = imc.toFixed(2);
     }
 }
