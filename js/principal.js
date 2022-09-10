@@ -8,7 +8,8 @@ function mostrarMensaje (){
 
 var botonAdicionar = document.querySelector("#adicionar-paciente");
 
-botonAdicionar.addEventListener("click",function(){ //funcion anonima que se la suele usar en muchos eventos
+botonAdicionar.addEventListener("click",function(event){ //funcion anonima que se la suele usar en muchos eventos
+    event.preventDefault();
     console.log("Usted hizo clic en el boton adicionar")
 });
 
