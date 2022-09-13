@@ -13,7 +13,7 @@ botonAdicionar.addEventListener("click",function(event){ //funcion anonima que s
 
     var form = document.querySelector("#form-adicionar");
 
-    var nombre = form.nombre.value;
+    var nombre = form.nombre.value;//toma los valores cargador en el input
     var peso = form.peso.value;
     var altura = form.altura.value;
     var gordura = form.gordura.value;
@@ -22,6 +22,19 @@ botonAdicionar.addEventListener("click",function(event){ //funcion anonima que s
     console.log(peso);
     console.log(altura);
     console.log(gordura);
+
+    pacienteTr = document.createElement("tr");
+    nombreTd = document.createElement("td");
+    pesoTd = document.createElement("td");
+    gorduraTd = document.createElement("td");
+    imcTd = document.createElement("td");
+
+    //<tr><tr>
+    //<td><td>
+    //<td><td>
+    //<td><td>
+    //<td><td>
+    //<td><td>
 
 });
 
