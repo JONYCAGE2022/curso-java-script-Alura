@@ -18,7 +18,7 @@ botonAdicionar.addEventListener("click",function(event){ //funcion anonima que s
     var altura = form.altura.value;
     var gordura = form.gordura.value;
 
-    var tabla = document.querySelector("#tabla_pacientes");
+    var tabla = document.querySelector("#tabla-pacientes");
 
     pacienteTr = document.createElement("tr");
     nombreTd = document.createElement("td");
