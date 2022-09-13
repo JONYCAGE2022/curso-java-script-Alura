@@ -13,15 +13,12 @@ botonAdicionar.addEventListener("click",function(event){ //funcion anonima que s
 
     var form = document.querySelector("#form-adicionar");
 
-    var nombre = form.nombre.value;//toma los valores cargador en el input
+    var nombre = form.nombre.value; //toma los valores cargador en el input
     var peso = form.peso.value;
     var altura = form.altura.value;
     var gordura = form.gordura.value;
 
-    console.log(nombre);
-    console.log(peso);
-    console.log(altura);
-    console.log(gordura);
+    var tabla = document.querySelector("#tabla_pacientes");
 
     pacienteTr = document.createElement("tr");
     nombreTd = document.createElement("td");
@@ -35,6 +32,18 @@ botonAdicionar.addEventListener("click",function(event){ //funcion anonima que s
     //<td><td>
     //<td><td>
     //<td><td>
+
+    nombreTd.textContent = nombre;//le asigno a esto que creamos anteriormente el valor que el usuario ingreso
+    alturaTd.textContent = altura;
+    pesoTd.textContent = peso;
+    gorduraTd.textContent = gordura;
+
+    pacienteTr.appendChild(nombreTd);//asociamos el hijo nombreTd al padre pacienteTr
+    pacienteTr.appendChild(pesoTd);
+    pacienteTr.appendChild(alturaTd);
+    pacienteTr.appendChild(gorduraTd);
+
+    tabla.appendChild(pacienteTr);//asociamos pacienteTr a la tabla .. eso quiere decir que los valores capturados se ingresan en la tabla
 
 });
 
