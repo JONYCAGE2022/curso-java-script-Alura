@@ -10,7 +10,19 @@ var botonAdicionar = document.querySelector("#adicionar-paciente");
 
 botonAdicionar.addEventListener("click",function(event){ //funcion anonima que se la suele usar en muchos eventos
     event.preventDefault();
-    console.log("Usted hizo clic en el boton adicionar")
+
+    var form = document.querySelector("#form-adicionar");
+
+    var nombre = form.nombre.value;
+    var peso = form.peso.value;
+    var altura = form.altura.value;
+    var gordura = form.gordura.value;
+
+    console.log(nombre);
+    console.log(peso);
+    console.log(altura);
+    console.log(gordura);
+
 });
 
 //paciente es un objeto 
