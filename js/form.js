@@ -13,13 +13,11 @@ botonAdicionar.addEventListener("click",function(event){ //funcion anonima que s
 
     var form = document.querySelector("#form-adicionar");
 
-    var nombre = form.nombre.value; //toma los valores cargador en el input
-    var peso = form.peso.value;
-    var altura = form.altura.value;
-    var gordura = form.gordura.value;
-
+    var paciente = capturarDatosPacientes(form);
+    
     var tabla = document.querySelector("#tabla-pacientes");
 
+    //crear los tds y un tr
     pacienteTr = document.createElement("tr");
     nombreTd = document.createElement("td");
     alturaTd = document.createElement("td");
@@ -34,12 +32,14 @@ botonAdicionar.addEventListener("click",function(event){ //funcion anonima que s
     //<td><td>
     //<td><td>
 
+    //asignar los valores a la propiedad  textContent
     nombreTd.textContent = nombre;//le asigno a esto que creamos anteriormente el valor que el usuario ingreso
     alturaTd.textContent = altura;
     pesoTd.textContent = peso;
     gorduraTd.textContent = gordura;
     imcTd.textContent = calcularIMC(peso,altura);
 
+    //asignacion al tr de los td, y la tabla el tr 
     pacienteTr.appendChild(nombreTd);//asociamos el hijo nombreTd al padre pacienteTr
     pacienteTr.appendChild(pesoTd);
     pacienteTr.appendChild(alturaTd);
@@ -49,3 +49,14 @@ botonAdicionar.addEventListener("click",function(event){ //funcion anonima que s
     tabla.appendChild(pacienteTr);//asociamos pacienteTr a la tabla .. eso quiere decir que los valores capturados se ingresan en la tabla
 
 });
+//clase seria paciente con caracteristicas que tiene paciente (abtraccion) = {nombre,peso,altura,%de godrura}
+//objeto seria el paciente llevado a la realidad(instancia, representando algo del mundo real), por ej: paciente 1 = {Juan,70,1.70,18}
+function capturarDatosPacientes(form){
+    //capturando los datos del formulario 
+    var nombre = form.nombre.value; //toma los valores cargador en el input
+    var peso = form.peso.value;
+    var altura = form.altura.value;
+    var gordura = form.gordura.value;
+
+    return
+}
