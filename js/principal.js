@@ -22,6 +22,7 @@ botonAdicionar.addEventListener("click",function(event){ //funcion anonima que s
 
     pacienteTr = document.createElement("tr");
     nombreTd = document.createElement("td");
+    alturaTd = document.createElement("td");
     pesoTd = document.createElement("td");
     gorduraTd = document.createElement("td");
     imcTd = document.createElement("td");
@@ -53,6 +54,7 @@ console.log(pacientes);
 
 for (var i = 0; i<pacientes.length; i++){
     var paciente = pacientes[i]
+
     var tdPeso = paciente.querySelector(".info-peso");//aqui se accede al hijo "info-peso" a traves del padre "primer paciente"
     var peso = tdPeso.textContent;
 
