@@ -33,10 +33,10 @@ botonAdicionar.addEventListener("click",function(event){ //funcion anonima que s
     //<td><td>
 
     //asignar los valores a la propiedad  textContent
-    nombreTd.textContent = nombre;//le asigno a esto que creamos anteriormente el valor que el usuario ingreso
-    alturaTd.textContent = altura;
-    pesoTd.textContent = peso;
-    gorduraTd.textContent = gordura;
+    nombreTd.textContent = paciente.nombre;//le asigno a esto que creamos anteriormente el valor que el usuario ingreso
+    alturaTd.textContent = paciente.altura;
+    pesoTd.textContent = paciente.peso;
+    gorduraTd.textContent = paciente.gordura;
     imcTd.textContent = calcularIMC(peso,altura);
 
     //asignacion al tr de los td, y la tabla el tr 
@@ -53,10 +53,11 @@ botonAdicionar.addEventListener("click",function(event){ //funcion anonima que s
 //objeto seria el paciente llevado a la realidad(instancia, representando algo del mundo real), por ej: paciente 1 = {Juan,70,1.70,18}
 function capturarDatosPacientes(form){
     //capturando los datos del formulario 
-    var nombre = form.nombre.value; //toma los valores cargador en el input
-    var peso = form.peso.value;
-    var altura = form.altura.value;
-    var gordura = form.gordura.value;
-
-    return
+    var paciente = {
+        nombre : form.nombre.value, //toma los valores cargador en el input
+        peso : form.peso.value,
+        altura : form.altura.value,
+        gordura : form.gordura.value
+    }
+    return paciente;
 }
