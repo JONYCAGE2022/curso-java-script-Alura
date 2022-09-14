@@ -33,9 +33,13 @@ for (var i = 0; i<pacientes.length; i++){
     }
     //verdadero Y verdadero --> verdadero
     // verdadero y falso --> falso
-    if (pesoEsValido && alturaEsValida){
-        var imc = peso / (altura * altura); //100 / 2 * 2 = 100 / 4 = 25 
-        tdIMC.textContent = imc.toFixed(2);
+    if (pesoEsValido && alturaEsValida){  
+        tdIMC.textContent = calcularIMC(peso,altura);
     }
+}
+
+function calcularIMC(peso,altura){
+    var imc = peso / (altura*altura);//100 / 2 * 2 = 100 / 4 = 25
+    return imc.toFixed(2);
 }
 

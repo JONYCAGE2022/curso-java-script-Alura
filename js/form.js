@@ -38,11 +38,13 @@ botonAdicionar.addEventListener("click",function(event){ //funcion anonima que s
     alturaTd.textContent = altura;
     pesoTd.textContent = peso;
     gorduraTd.textContent = gordura;
+    imcTd.textContent = calcularIMC(peso,altura);
 
     pacienteTr.appendChild(nombreTd);//asociamos el hijo nombreTd al padre pacienteTr
     pacienteTr.appendChild(pesoTd);
     pacienteTr.appendChild(alturaTd);
     pacienteTr.appendChild(gorduraTd);
+    pacienteTr.appendChild(imcTd);
 
     tabla.appendChild(pacienteTr);//asociamos pacienteTr a la tabla .. eso quiere decir que los valores capturados se ingresan en la tabla
 
