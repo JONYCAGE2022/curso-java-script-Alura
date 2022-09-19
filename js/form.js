@@ -14,6 +14,7 @@ botonAdicionar.addEventListener("click",function(event){ //funcion anonima que s
     var form = document.querySelector("#form-adicionar");
 
     var paciente = capturarDatosPacientes(form);
+    console.log(paciente);
     
     var tabla = document.querySelector("#tabla-pacientes");
 
@@ -21,7 +22,7 @@ botonAdicionar.addEventListener("click",function(event){ //funcion anonima que s
     pacienteTr = document.createElement("tr");
     nombreTd = document.createElement("td");
     alturaTd = document.createElement("td");
-    pesoTd = document.createElement("td");
+    pesoTd = document.createElement("td"); 
     gorduraTd = document.createElement("td");
     imcTd = document.createElement("td");
 
@@ -37,7 +38,7 @@ botonAdicionar.addEventListener("click",function(event){ //funcion anonima que s
     alturaTd.textContent = paciente.altura;
     pesoTd.textContent = paciente.peso;
     gorduraTd.textContent = paciente.gordura;
-    imcTd.textContent = calcularIMC(peso,altura);
+    imcTd.textContent = paciente.imc; 
 
     //asignacion al tr de los td, y la tabla el tr 
     pacienteTr.appendChild(nombreTd);//asociamos el hijo nombreTd al padre pacienteTr
@@ -57,7 +58,8 @@ function capturarDatosPacientes(form){
         nombre : form.nombre.value, //toma los valores cargador en el input
         peso : form.peso.value,
         altura : form.altura.value,
-        gordura : form.gordura.value
+        gordura : form.gordura.value,
+        imc : calcularIMC(form.peso.value,form.altura.value)
     }
     return paciente;
 }
