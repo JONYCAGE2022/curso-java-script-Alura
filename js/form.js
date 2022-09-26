@@ -6,6 +6,7 @@ botonAdicionar.addEventListener("click",function(event){
     var form = document.querySelector("#form-adicionar"); 
     var paciente = capturarDatosPaciente(form);
     var pacienteTr = construirTr(paciente);
+    //validarPaciente 
     var tabla = document.querySelector("#tabla-pacientes");
     tabla.appendChild(pacienteTr);
     form.reset();
