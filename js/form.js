@@ -8,10 +8,10 @@ botonAdicionar.addEventListener("click",function(event){
     var pacienteTr = construirTr(paciente);
 
     var errores = validarPaciente(paciente);
-    if (errores.length > 0){
-        var mensajeError = document.querySelector("#mensaje-error");
-        mensajeError.textContent = error;
-        return;
+
+    if (errores.length > 0){//si el tamaño de mis errores es mayor que cero, exhibir errores
+        exhibirMensajesErrores(errores);
+        return;//si entra directamente se corta y no me adiciona los datos
     }
 
     var tabla = document.querySelector("#tabla-pacientes");
@@ -62,4 +62,14 @@ function validarPaciente(paciente){//caso mi peso o altura este incorrecto
         errores.push("La altura es incorrecto");
     }
     return errores;
+}
+
+function exhibirMensajesErrores(errores){
+    var ul = document.querySelector("#mensaje-errores");
+     
+    errores.forEach(function(error){
+        var li = document.createElement("li");//crea el elemento li
+        li.textContent = error;//entramos al contenido de li
+        ul.appendChild(li);//asigna a padre ul el hijo li
+    });
 }
