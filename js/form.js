@@ -8,6 +8,7 @@ botonAdicionar.addEventListener("click",function(event){
     var pacienteTr = construirTr(paciente);
 
     var errores = validarPaciente(paciente);
+    console.log(errores);
 
     if (errores.length > 0){//si el tamaño de mis errores es mayor que cero, exhibir errores
         exhibirMensajesErrores(errores);
@@ -17,6 +18,9 @@ botonAdicionar.addEventListener("click",function(event){
     var tabla = document.querySelector("#tabla-pacientes");
     tabla.appendChild(pacienteTr);
     form.reset();
+
+    var mensajesErrores = document.querySelector("#mensaje-errores");
+    mensajesErrores.innerHTML = "";//es una propiedad, no una funcion, por lo tanto, utilñizamos un simbolo = para atribuirle un nuevo contenido
 
 });
 
@@ -55,8 +59,20 @@ function construirTd(dato,clase){
 
 function validarPaciente(paciente){//caso mi peso o altura este incorrecto
     var errores = []
+    if (paciente.nombre.length == 0){
+        errores.push("El nombre no puede estar vacio");
+    }
+    if (paciente.peso.length == 0){
+        errores.push("El peso no puede estar vacio");
+    }
+    if (paciente.altura.length == 0){
+        errores.push("La altura no puede estar vacia");
+    }
+    if (paciente.gordura.length == 0){
+        errores.push("El %gordura no puede estar vacio");
+    }
     if (!validarPeso(paciente.peso)){
-        errores.push("El peso es incorrecto")
+        errores.push("El peso es incorrecto");
     }
     if (!validarAltura(paciente.altura)){
         errores.push("La altura es incorrecto");
@@ -67,8 +83,9 @@ function validarPaciente(paciente){//caso mi peso o altura este incorrecto
 function exhibirMensajesErrores(errores){
     var ul = document.querySelector("#mensaje-errores");
      
-    errores.forEach(function(error){
+    errores.forEach(function(error){//el forEach contiene todo el array de errores y pasa por todos ellos hasta encontrar el error.
         var li = document.createElement("li");//crea el elemento li
+        ul.innerHTML = "";//inserta el nuevo valor 
         li.textContent = error;//entramos al contenido de li
         ul.appendChild(li);//asigna a padre ul el hijo li
     });
