@@ -5,7 +5,6 @@ botonAdicionar.addEventListener("click",function(event){
 
     var form = document.querySelector("#form-adicionar"); 
     var paciente = capturarDatosPaciente(form);
-    var pacienteTr = construirTr(paciente);
 
     var errores = validarPaciente(paciente);
     console.log(errores);
@@ -15,14 +14,19 @@ botonAdicionar.addEventListener("click",function(event){
         return;//si entra directamente se corta y no me adiciona los datos
     }
 
-    var tabla = document.querySelector("#tabla-pacientes");
-    tabla.appendChild(pacienteTr);
+    adicionarPacienteEnLaTabla(paciente);
     form.reset();
 
     var mensajesErrores = document.querySelector("#mensaje-errores");
     mensajesErrores.innerHTML = "";//es una propiedad, no una funcion, por lo tanto, utilñizamos un simbolo = para atribuirle un nuevo contenido
 
 });
+
+function adicionarPacienteEnLaTabla(paciente){//funcion que adiciona un paciente en la tabla
+    var pacienteTr = construirTr(paciente);//creamos la etiqueta paciente
+    var tabla = document.querySelector("#tabla-pacientes");//capturamos la tabla
+    tabla.appendChild(pacienteTr);//le adicionamos este paciente tr a la tabla
+}
 
 function capturarDatosPaciente(form){
     //capturando los datos del formulario
