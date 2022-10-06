@@ -19,6 +19,18 @@ campoFiltro.addEventListener("input",function(){
                 paciente.classList.remove("invisible");
             }
     
+            /*var comparar = nombre.substring(0, this.value.length);
+            var compararMinuscula = comparar.toLowerCase();
+            var valorDigitadoMinuscula = this.value.toLowerCase();
+            if(!(valorDigitadoMinuscula  == compararMinuscula )){
+            paciente.classList.add("invisible");
+            } else {
+            paciente.classList.remove("invisible");
+            } */
+            //este codigo es otra forma para hacer un fiultro sin necesidad de usar expresiones regulares
+
+
+
             //console.log(nombre);//imprimir el nombre que lo estoy caputarando de cada uno de mis pacientes
     
         }
